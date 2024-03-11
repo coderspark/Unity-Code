@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform tr;
     public Rigidbody rb;
     public Transform level;
-    public GameObject cam;
 
     // Other things to keep code clean
     public float distance;
