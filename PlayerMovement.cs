@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Main movement variables
     public float movespeed = 9f;
-    public float jumppower;
+    public float jumppower = 8f;
     public bool grounded;
 
     // GameObjects, Transforms, and more of that stuff
