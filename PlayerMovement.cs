@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     // movement
     void Movement()
     {
-        movestate = "Idle";
         if (Input.GetKey(KeyCode.D))
         {
             tr.Translate((Vector3.right * movespeed) * Time.deltaTime);
