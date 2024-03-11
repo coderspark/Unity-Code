@@ -12,6 +12,6 @@ public class PlayerLevelDetection : MonoBehaviour
         {
             loc = hit.point;
         }
-        transform.position = new Vector3(player.position.x , loc.y - 0.5f, player.position.z);
+        transform.position = new Vector3(player.position.x , loc.y - 0.49f, player.position.z);
     }
 }
