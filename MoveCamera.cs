@@ -6,7 +6,7 @@ public class MoveCamera : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
     public GameObject playerob;
-    public float rotationSpeed = 5f; // Speed of rotation
+    public float rotationSpeed = 1500f; // Speed of rotation
     public float horizontalInput;
     public float verticalInput;
     void Update()
