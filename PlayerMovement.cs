@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumppower);
         }
-
+    }
     // Update is called once per frame
     void Update()
     {
