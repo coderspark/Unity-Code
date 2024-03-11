@@ -1,51 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Main movement variables
-    public float movespeed = 9f;
-    public float jumppower = 8f;
+    public float moveSpeed = 9f;
+    public float jumpPower = 8f;
     public bool grounded;
 
     // GameObjects, Transforms, and more of that stuff
-    public Transform tr;
-    public Rigidbody rb;
+    private Rigidbody rb;
     public Transform level;
 
     // Other things to keep code clean
     public float distance;
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // movement
     void Movement()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            tr.Translate((Vector3.right * movespeed) * Time.deltaTime);
+            rb.AddRelativeForce((Vector3.right * moveSpeed));
         }
         if (Input.GetKey(KeyCode.A))
         {
-            tr.Translate((Vector3.left * movespeed) * Time.deltaTime);
+            rb.AddRelativeForce((Vector3.left * moveSpeed));
         }
         if (Input.GetKey(KeyCode.W))
         {
-            tr.Translate((Vector3.forward * movespeed) * Time.deltaTime);
+            rb.AddRelativeForce((Vector3.forward * moveSpeed));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            tr.Translate((Vector3.back * movespeed) * Time.deltaTime);
+            rb.AddRelativeForce((Vector3.back * moveSpeed));
         }
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
-            rb.AddForce(Vector3.up * jumppower);
+            rb.AddForce(Vector3.up * jumpPower);
         }
     }
     // Update is called once per frame
     void Update()
     {
         // set ground to true/false
-        distance = Vector3.Distance(level.position, tr.position);
+        distance = Mathf.Abs(level.position.y - transform.position.y);
         if (distance < 1.5f)
         {
             grounded = true;
